@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .container {
+            width: 100px;
+            height: 100px;
+            margin: 100px 30px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos explicabo culpa tempora, harum ea magni aliquid
+        aut officia possimus eius! Est officia velit laboriosam commodi reprehenderit quis hic fugit doloremque!
+    </div>
+
+    <div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <ul>
+        <li class="red">элемент списка</li>
+        <li class="blue">элемент списка</li>
+        <li class="red">элемент списка</li>
+        <li class="red">элемент списка</li>
+        <li class="red">элемент списка</li>
+    </ul>
+    <script>
+        let tag = document.getElementsByTagName('DIV');
+        console.log(tag);
+        let classes = document.getElementsByClassName('red')
+        console.log(classes);
+
+        //////////////////////////////////////////////////////////////
+
+        let elArr = document.body.children;
+
+        for (let i = 0; i < elArr.length; i++) {
+            if (elArr[i] == 'DIV')
+                elArr[i].style.background = 'red'; {
+
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        let elArr1 = document.body.children;
+        for (let i = 0; i < elArr1.length; i++) {
+            if (elArr1[i] == 'DIV' && elArr1[i].classList.contains('card') && elArr1[i].classList.contains('editable')) {
+                elArr1[i].style.background = 'red';
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////
+
+        let elArr2 = document.body.querySelectorAll('div.card.editable');
+        for (let i = 0; i < elArr2.length; i++) {
+            elArr2[i].style.background = 'red';
+        }
+
+        ////////////////////////////////////////////////////////////////////////////
+
+        let clientWidth = document.querySelector('.container').clientWidth;
+
+        let clientHeight = document.querySelector('.container').clientHeight;
+
+        console.log(clientWidth, clientHeight);
+
+
+    </script>
+
+
+</body>
+
+</html>
